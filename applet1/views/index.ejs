@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-cloak>
+<head>
+  <meta charset="utf8">
+  <base href="/">
+  <title>Applet1</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div ng-controller="AppCtrl">
+    <portalng portal-url="http://localhost:3000">
+      <h2>Applet1</h2>
+      <!-- Using ui-router for internal navigation and routing -->
+      <a ui-sref="state1">State 1</a>
+      <a ui-sref="state2">State 2</a>
+
+      <div ui-view></div>
+    </portalng>
+  </div>
+  <script src="js/lib/angular/angular.js"></script>
+  <script src="js/lib/angular-ui/angular-ui-router.js"></script>
+
+  <script src="http://localhost:3000/js/directives.js"></script><!-- the portal directive TODO use grunt to package and minify this, using the portal URL is bad.. introduces an unnecessary dependency on that service-->
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
